@@ -21,9 +21,12 @@ const HomePage = () => {
         gap="0.5rem"
         justifyContent="space-between"
       >
+        {/* Left Pane - UserWidget */}
         <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
           <UserWidget userId={_id} picturePath={picturePath} />
         </Box>
+
+        {/* Mid Pane - MyPostWidget, PostsWidget */}
         <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}
           mt={isNonMobileScreens ? undefined : "2rem"}
@@ -31,8 +34,11 @@ const HomePage = () => {
           <MyPostWidget picturePath={picturePath} />
           <PostsWidget userId={_id} />
         </Box>
+
         {isNonMobileScreens && (
           <Box flexBasis="26%">
+            {/* Right Pane - AdvertWidget, FriendListWidget */}
+
             <AdvertWidget />
             <Box m="2rem 0" />
             <FriendListWidget userId={_id} />

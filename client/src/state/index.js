@@ -1,16 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  mode: "light",
-  user: null,
+  mode: "light",    // track theme
+  user: null,       // track current loggedin user with token 
   token: null,
-  posts: [],
+  posts: [],        // track list of posts 
 };
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    // togger state.mode
     setMode: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
     },
@@ -30,7 +31,7 @@ export const authSlice = createSlice({
       }
     },
     setPosts: (state, action) => {
-      state.posts = action.payload.posts;
+      state.posts = action.payload.posts.reverse();
     },
     setPost: (state, action) => {
       const updatedPosts = state.posts.map((post) => {

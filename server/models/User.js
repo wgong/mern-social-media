@@ -1,5 +1,19 @@
 import mongoose from "mongoose";
 
+/*
+
+Mongo Object has the following system attributes:
+
+_id : ObjectId, 
+      eg. 639ce1bb087f3efea22b545f
+
+createdAt, updatedAt : timestamps, 
+      eg. 2022-12-18T18:11:19.792+00:00
+
+__v : version number
+
+*/
+
 const UserSchema = new mongoose.Schema(
   {
     firstName: {
